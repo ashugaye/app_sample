@@ -1,21 +1,21 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: app-sample
+  name: apps-sample
   labels:
-    app: app-sample
+    app: apps-sample
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: app-sample
+      app: apps-sample
   template:
     metadata:
       labels:
-        app: app-sample
+        app: apps-sample
     spec:
       containers:
-      - name: app-sample
+      - name: apps-sample
         image: k0001.azurecr.io/app_sample:cb3
         ports:
         - containerPort: 8080
