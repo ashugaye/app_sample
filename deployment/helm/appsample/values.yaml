@@ -6,9 +6,9 @@ replicaCount: 1
 
 image:
   repository: k0001.azurecr.io
-  iname: app_sample
+  iname: appsample
   name: app1-sample
-  tag: cb3
+#  tag: latest
   pullPolicy: IfNotPresent
 
 namespace: default
