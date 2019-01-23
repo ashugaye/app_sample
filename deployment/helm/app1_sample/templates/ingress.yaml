@@ -15,6 +15,6 @@ spec:
       paths:
       - backend:
           serviceName: {{ .Values.image.name }}
-          servicePort: {{ .Values.service.internalPort }}
+          servicePort: {{ .Values.service.externalPort }}
         path: /
 
