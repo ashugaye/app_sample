@@ -1,0 +1,14 @@
+[environments]
+  [environments.development]
+    name = "appsample"
+    namespace = "default"
+    wait = true
+    watch = false
+    watch-delay = 2
+    auto-connect = false
+    dockerfile = "Dockerfile"
+    container-builder = "acrbuild"
+    resource-group-name = "cloud-shell-storage-westeurope"
+    registry = "k0001.azurecr.io"
+    chart = "deployment/helm/appsample"
+#    custom-tags = 
