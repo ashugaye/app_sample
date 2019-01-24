@@ -1,0 +1,11 @@
+apiVersion: skaffold/v1beta2
+kind: Config
+build:
+  artifacts:
+  - image: k0001.azurecr.io/app_sample
+deploy:
+  kubectl:
+    manifests:
+    - deployment/apps_sample.yaml
+    - deployment/apps_sample_service.yaml
+    - scripts/helm-rbac.yaml
