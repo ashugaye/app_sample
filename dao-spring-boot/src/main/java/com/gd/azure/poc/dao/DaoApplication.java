@@ -24,51 +24,15 @@ public class DaoApplication {
         SpringApplication.run(DaoApplication.class, args);
     }
 
-    @Bean
-    public CommandLineRunner demo(IStoresDao storesDao) {
-        return (args) -> {
-            storesDao.deleteAll();
-            // save a couple of customers
-            storesDao.save(new Store("1", "Store1", new StoreType("name1", "displayName1"), "(555) 555-5555", new Date(),
-                "http://www.example.com/store/1", true,
-                new Address("street 1", "street 1.1", "Santa Clara", "CA", "95050")));
-
-            storesDao.save(new Store("2", "Store2", new StoreType("name2", "displayName2"), "(555) 555-5556", new Date(),
-                "http://www.example.com/store/2", true,
-                new Address("street 2", "street 2.1", "Dublin", "CA", "94568")));
-
-            storesDao.save(new Store("3","Store3", new StoreType("name3", "displayName3"), "(555) 555-5557", new Date(),
-                "http://www.example.com/store/3", true,
-                new Address("street 3", "street 3.1", "Mountain View", "CA", "94039")));
-
-            storesDao.save(new Store("4", "Store4", new StoreType("name4", "displayName4"), "(555) 555-5558", new Date(),
-                "http://www.example.com/store/4", true,
-                new Address("street 4", "street 4.1", "Cupertino", "CA", "94024")));
-
-            storesDao.save(new Store("5", "Store5", new StoreType("name5", "displayName5"), "(555) 555-5559", new Date(),
-                "http://www.example.com/store/5", false,
-                new Address("street 5", "street 5.1", "San Bruno", "CA", "94066")));
-
-            storesDao.save(new Store("6", "Store6", new StoreType("name6", "displayName6"), "(555) 555-5565", new Date(),
-                "http://www.example.com/store/6", true,
-                new Address("street 6", "street 6.1", "Frisco", "TX", "75035")));
-
-            storesDao.save(new Store("7", "Store7", new StoreType("name7", "displayName7"), "(555) 555-5566", new Date(),
-                "http://www.example.com/store/7", true,
-                new Address("street 7", "street 7.1", "Plano", "TX", "75024")));
-
-            storesDao.save(new Store("8", "Store8", new StoreType("name8", "displayName8"), "(555) 555-5567", new Date(),
-                "http://www.example.com/store/8", false,
-                new Address("street 8", "street 8.1", "Plano", "TX", "75025")));
-
-            storesDao.save(new Store("9", "Store9", new StoreType("name9", "displayName9"), "(555) 555-5568", new Date(),
-                "http://www.example.com/store/9", true,
-                new Address("street 9", "street 9.1", "Conway", "AR", "72032")));
-
-            storesDao.save(new Store("10", "Store10", new StoreType("name10", "displayName10"), "(555) 555-5569", new Date(),
-                "http://www.example.com/store/10", false,
-                new Address("street 10", "street 10.1", "Little Rock", "AR", "72033")));
-
-        };
-    }
+//    @Bean
+//    public CommandLineRunner demo(IStoresDao storesDao) {
+//        return (args) -> {
+//            storesDao.deleteAll();
+//            for (int i = 1; i < 10000; i++) {
+//                storesDao.save(new Store(String.valueOf(i), "Store" + i, new StoreType("name" + i, "displayName" + i), "(555) 555-5555", new Date(),
+//                    "http://www.example.com/store/" + i, true,
+//                    new Address("street " + i, "street " + i + "." + i, "Santa Clara", "CA", "95050")));
+//            }
+//        };
+//    }
 }
