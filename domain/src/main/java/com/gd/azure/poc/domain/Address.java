@@ -9,12 +9,14 @@ import javax.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @AttributeOverride(name = "id", column = @Column(name = "ADDRESS_PK"))
+@ToString
 public class Address {
 
 //    @Id

@@ -9,12 +9,14 @@ import javax.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @AttributeOverride(name = "id", column = @Column(name = "STORE_TYPE_PK"))
+@ToString
 public class StoreType {
 
 //    @Id
