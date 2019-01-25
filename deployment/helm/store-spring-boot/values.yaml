@@ -6,9 +6,9 @@ replicaCount: 1
 
 image:
   repository: k0001.azurecr.io
-  iname: dao-spring-boot
-  name: dao-spring-boot
-  tag: cba
+  iname: store-spring-boot
+  name: store-spring-boot
+  tag: cb9
   pullPolicy: IfNotPresent
 
 namespace: default
