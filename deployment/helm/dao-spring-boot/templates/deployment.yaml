@@ -33,6 +33,13 @@ spec:
         - name: http
           containerPort: {{.Values.service.internalPort}}
           protocol: TCP
+        resources:
+          limits:
+            cpu: "2"
+            memory: 4Gi
+          requests:
+            cpu: "250m"
+            memory: 1Gi
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
       dnsPolicy: ClusterFirst
