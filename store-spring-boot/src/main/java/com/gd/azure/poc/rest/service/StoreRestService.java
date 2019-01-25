@@ -31,7 +31,7 @@ public class StoreRestService {
 //
 //    }
 
-    @GetMapping(value = "{id}", produces = "application/json")
+    @GetMapping(value = "/{id}", produces = "application/json")
     public ResponseEntity<StoreDto> getStore(@PathVariable("id") String storeId) {
         try {
             return new ResponseEntity<>(storeService.getStore(storeId), HttpStatus.OK);
