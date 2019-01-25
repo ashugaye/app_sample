@@ -12,21 +12,14 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @AttributeOverride(name = "id", column = @Column(name = "ADDRESS_PK"))
 public class Address {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
-    public Address(String addressLineOne, String addressLineTwo, String city, String state, String zipCode) {
-        this.addressLineOne = addressLineOne;
-        this.addressLineTwo = addressLineTwo;
-        this.city = city;
-        this.state = state;
-        this.zipCode = zipCode;
-    }
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+//    private Long id;
 
     private String addressLineOne;
     private String addressLineTwo;

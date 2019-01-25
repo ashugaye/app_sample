@@ -1,9 +1,10 @@
 package com.gd.azure.poc.domain;
 
+//import com.microsoft.azure.spring.data.cosmosdb.core.mapping.Document;
+//import com.microsoft.azure.spring.data.cosmosdb.core.mapping.PartitionKey;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -11,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -18,23 +20,15 @@ import lombok.ToString;
 @Entity
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 @ToString
+//@Document
 public class Store implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+    private String id;
 
-    public Store(String displayName, StoreType storeType, String phone, Date openDate, String url, boolean active,
-        Address address) {
-        this.displayName = displayName;
-        this.storeType = storeType;
-        this.phone = phone;
-        this.openDate = openDate;
-        this.url = url;
-        this.active = active;
-        this.address = address;
-    }
 
     private String displayName;
 
