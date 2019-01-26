@@ -8,7 +8,7 @@ image:
   repository: k0001.azurecr.io
   iname: store-spring-boot
   name: store-spring-boot
-  tag: cb9
+  tag: latest
   pullPolicy: IfNotPresent
 
 namespace: default
