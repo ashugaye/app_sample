@@ -8,7 +8,7 @@ image:
   repository: k0001.azurecr.io
   iname: dao-spring-boot
   name: dao-spring-boot
-  tag: cba
+  tag: v2
   pullPolicy: IfNotPresent
 
 namespace: default

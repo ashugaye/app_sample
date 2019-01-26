@@ -6,8 +6,8 @@ replicaCount: 1
 
 image:
   repository: k0001.azurecr.io
-  iname: store-spring-boot
-  name: store-spring-boot
+  iname: zipkin
+  name: zipkin
   tag: v2
   pullPolicy: IfNotPresent
 
@@ -17,7 +17,7 @@ ingressUrl: fa3a51423e2145209f24.eastus.aksapp.io
 service:
   type: ClusterIP
   externalPort: 80
-  internalPort: 8080
+  internalPort: 9411
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
