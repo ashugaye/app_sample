@@ -19,22 +19,22 @@ public class StoreRestService {
     @Autowired
     private StoreService storeService;
 
-//    @GetMapping(value = "/ids/{ids}", produces = "application/json")
-//    public ResponseEntity<Collection<StoreDto>> getStores(@PathVariable("ids") String[] storeIds) {
-//        try {
-//            Collection<StoreDto> stores = storeService.getStores(storeIds);
-//            return new ResponseEntity<>(stores, HttpStatus.OK);
-//
-//        } catch (Exception e) {
-//            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-//        }
-//
-//    }
+    @GetMapping(value = "/{ids}/list", produces = "application/json")
+    public ResponseEntity<Collection<StoreDto>> getStores(@PathVariable("ids") String[] storeIds,
+        @RequestParam(value = "fromDb", defaultValue = "false") boolean fromDb) {
+        try {
+            Collection<StoreDto> stores = storeService.getStores(storeIds, fromDb);
+            return new ResponseEntity<>(stores, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 
     @GetMapping(value = "/{id}", produces = "application/json")
-    public ResponseEntity<StoreDto> getStore(@PathVariable("id") String storeId) {
+    public ResponseEntity<StoreDto> getStore(@PathVariable("id") String storeId,
+        @RequestParam(value = "fromDb", defaultValue = "false") boolean fromDb) {
         try {
-            return new ResponseEntity<>(storeService.getStore(storeId), HttpStatus.OK);
+            return new ResponseEntity<>(storeService.getStore(storeId, fromDb), HttpStatus.OK);
 
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
