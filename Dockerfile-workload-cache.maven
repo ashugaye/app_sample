@@ -1,2 +1,5 @@
 FROM ellerbrock/alpine-bash-curl-ssl
-CMD "/bin/bash" "for i in {1..10000}; do curl -s http://store-spring-boot/stores/$((1 + RANDOM % 10000)); done"
+ADD workload-cache.sh /tmp/workload-cache.sh
+USER root
+RUN chmod +x /tmp/workload-cache.sh
+ENTRYPOINT ["/tmp/workload-cache.sh"]
