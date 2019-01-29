@@ -8,7 +8,7 @@ image:
   repository: k0001.azurecr.io
   iname: workload-cache
   name: workload-cache
-  tag: v5
+  tag: v6
   pullPolicy: IfNotPresent
 
 namespace: default
@@ -17,7 +17,7 @@ ingressUrl: fa3a51423e2145209f24.eastus.aksapp.io
 service:
   type: ClusterIP
   externalPort: 80
-  internalPort: 9411
+  internalPort: 8080
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
