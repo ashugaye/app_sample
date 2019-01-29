@@ -8,7 +8,7 @@ metadata:
   namespace: {{ .Values.namespace }}
 spec:
   scaleTargetRef:
-    # apiVersion: extensions/v1beta1
+    apiVersion: extensions/v1beta1
     kind: Deployment
     name: {{ .Values.image.name }}
   minReplicas: 1
