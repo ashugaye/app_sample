@@ -8,7 +8,7 @@ image:
   repository: k0001.azurecr.io
   iname: workload-db
   name: workload-db
-  tag: v3
+  tag: v4
   pullPolicy: IfNotPresent
 
 namespace: default
