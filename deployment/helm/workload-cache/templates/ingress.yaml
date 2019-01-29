@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ .Values.image.name }}
+  annotations:
+    kubernetes.io/ingress.class: addon-http-application-routing
+  labels:
+    app: {{ .Values.image.name }}
+    versiontag: {{ .Values.image.tag }}
+  namespace: {{ .Values.namespace }}
+spec:
+  rules:
+  - host: {{ .Values.image.name }}.{{ .Values.namespace }}.{{ .Values.ingressUrl }}
+    http:
+      paths:
+      - backend:
+          serviceName: {{ .Values.image.name }}
+          servicePort: {{ .Values.service.externalPort }}
+        path: /
