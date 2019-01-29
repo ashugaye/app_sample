@@ -1,5 +1,5 @@
 FROM ellerbrock/alpine-bash-curl-ssl
 ADD workload-db.sh /tmp/workload-db.sh
 USER root
-RUN sudo chmod +x /tmp/workload-db.sh
+RUN chmod +x /tmp/workload-db.sh
 ENTRYPOINT ["/tmp/workload-db.sh"]
