@@ -6,9 +6,9 @@ replicaCount: 1
 
 image:
   repository: k0001.azurecr.io
-  iname: zipkin
-  name: zipkin
-  tag: v2
+  iname: workload-db
+  name: workload-db
+  tag: v3
   pullPolicy: IfNotPresent
 
 namespace: default
@@ -31,6 +31,6 @@ resources: {}
   #   cpu: "1"
   #   memory: 2Gi
 
-nodeSelector: {}
-tolerations: []
-affinity: {}
+# nodeSelector: {}
+# tolerations: []
+# affinity: {}
