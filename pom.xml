@@ -15,7 +15,7 @@
 		<module>service</module>
 		<module>store-spring-boot</module>
 		<module>dao-spring-boot</module>
-		<module>configuration-service</module>
+		<!--<module>configuration-service</module>-->
 	</modules>
 
 	<properties>

@@ -5,7 +5,6 @@ import feign.Headers;
 import feign.Param;
 import feign.RequestLine;
 import io.reactivex.Flowable;
-import java.util.List;
 
 @Headers({"Accept: application/json;charset=UTF-8"})
 public interface StoreClient {
