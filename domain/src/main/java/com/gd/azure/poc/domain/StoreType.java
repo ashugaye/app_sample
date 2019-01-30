@@ -1,5 +1,6 @@
 package com.gd.azure.poc.domain;
 
+import java.io.Serializable;
 import javax.persistence.AttributeOverride;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,7 +18,7 @@ import lombok.ToString;
 @Entity
 @AttributeOverride(name = "id", column = @Column(name = "STORE_TYPE_PK"))
 @ToString
-public class StoreType {
+public class StoreType implements Serializable {
 
 //    @Id
 //    @GeneratedValue(strategy = GenerationType.AUTO)

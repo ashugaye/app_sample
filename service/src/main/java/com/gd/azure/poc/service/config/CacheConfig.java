@@ -2,12 +2,14 @@ package com.gd.azure.poc.service.config;
 
 import com.gd.azure.poc.domain.Store;
 import java.io.File;
+import org.ehcache.Cache;
 import org.ehcache.PersistentCacheManager;
 import org.ehcache.config.builders.CacheConfigurationBuilder;
 import org.ehcache.config.builders.CacheManagerBuilder;
 import org.ehcache.config.builders.ResourcePoolsBuilder;
 import org.ehcache.config.units.EntryUnit;
 import org.ehcache.config.units.MemoryUnit;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
@@ -28,5 +30,10 @@ public class CacheConfig {
                             .disk(10000, MemoryUnit.MB, true))
                 )
                 .build(true);
+    }
+
+    @Bean
+    public Cache<String, Store> getStoreCache() {
+        return cacheManager.getCache("storeCache", String.class, Store.class);
     }
 }

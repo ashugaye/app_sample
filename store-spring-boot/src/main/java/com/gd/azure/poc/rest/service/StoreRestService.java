@@ -3,6 +3,7 @@ package com.gd.azure.poc.rest.service;
 import com.gd.azure.poc.dto.StoreDto;
 import com.gd.azure.poc.service.StoreService;
 import java.util.Collection;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,8 +20,8 @@ public class StoreRestService {
     @Autowired
     private StoreService storeService;
 
-    @GetMapping(value = "/{ids}/list", produces = "application/json")
-    public ResponseEntity<Collection<StoreDto>> getStores(@PathVariable("ids") String[] storeIds,
+    @GetMapping(value = "/{ids}", produces = "application/json")
+    public ResponseEntity<Collection<StoreDto>> getStores(@PathVariable("ids") List<String> storeIds,
         @RequestParam(value = "fromDb", defaultValue = "false") boolean fromDb) {
         try {
             Collection<StoreDto> stores = storeService.getStores(storeIds, fromDb);
@@ -29,17 +30,4 @@ public class StoreRestService {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
-    @GetMapping(value = "/{id}", produces = "application/json")
-    public ResponseEntity<StoreDto> getStore(@PathVariable("id") String storeId,
-        @RequestParam(value = "fromDb", defaultValue = "false") boolean fromDb) {
-        try {
-            return new ResponseEntity<>(storeService.getStore(storeId, fromDb), HttpStatus.OK);
-
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-
-    }
-
 }
